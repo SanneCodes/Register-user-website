@@ -8,13 +8,13 @@
 <body>
     <form name="frmLogin" method="post" action="../connectDB/connect.php">
         <label>Mail:</label>
-        <input type="mail"><br>
+        <input type="mail" name="mailInput"><br>
         <label>Username:</label>
-        <input type="text" autocomplete="username"><br>
+        <input type="text" autocomplete="username" name="usernameInput"><br>
         <label>Password:</label>
-        <input type="password" id="passwordInput" autocomplete="current-password">
-        <input type="checkbox" id="showPassword"> <br>
-        <button>Create user</button>
+        <input type="password" name="passwordInput" id="passwordInput" autocomplete="current-password">
+	<input type="checkbox"id="showPassword" > <br>
+	<button>Create user</button>
     </form>
 </body>
 <script src="../js/showPass.js"></script>
