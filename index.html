@@ -6,15 +6,15 @@
     <title>sign up</title>
 </head>
 <body>
-    <form name="frmSignUp" method="post" action="/connectDB/connect.php">
+    <form name="frmSignUp" method="post" action="/connectDB/signUp.php">
         <label>Mail:</label>
         <input type="mail" name="mailInput"><br>
         <label>Username:</label>
         <input type="text" autocomplete="username" name="usernameInput"><br>
         <label>Password:</label>
-        <input type="password" name="passwordInput" id="passwordInput" autocomplete="current-password">
-	    <input type="checkbox"id="showPassword" > <br>
-	    <button>Create user</button>
+	<input type="password" name="passwordInput" id="passwordInput" autocomplete="current-password">
+	<input type="checkbox"id="showPassword" > <br>
+	<button>Create user</button>
     </form>
     <a href="/html/login.html">Already have an account? Login here</a>
 </body>
