@@ -1,6 +1,6 @@
 <?php
 //database tilgangsdata
-$database = "fordypningsoppgave";
+$database = "loginDB";
 $servername = "localhost";
 $username = "bruker23";
 $password = "12345";
