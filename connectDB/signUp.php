@@ -28,8 +28,10 @@ if($uResult->num_rows != 0){
 	echo "username allready exist";
 }
 else{
+	$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
+
 	//insert bruker i db
-	$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$password')";
+	$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$passwordHashed')";
 	//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
 	//Utfører spørringen
 
