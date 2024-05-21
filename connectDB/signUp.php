@@ -21,18 +21,25 @@ $mail = $conn->real_escape_string($_POST['mailInput']);
 $username = $conn->real_escape_string($_POST['usernameInput']);
 $password = $conn->real_escape_string($_POST['passwordInput']);
 
+$uCheck = "SELECT username FROM user WHERE username = '$username'";
+$uResult = $conn->query($uCheck);
 
-//insert bruker i db
-$sql = "INSERT INTO User (mail, username, password) VALUES ('$mail', '$username', '$password')";
-//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
-//Utfører spørringen
+if($uResult->num_rows != 0){
+	echo "username allready exist";
+}
+else{
+	//insert bruker i db
+	$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$password')";
+	//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
+	//Utfører spørringen
 
-if ($conn->query($sql) === TRUE){
-	//hvis insetting velykket, så viser suksessmelding
-	echo "yay it inserted";
-} else {
-	//hvis ikke velykket så viser error-melding
-	echo "error:" . $sql. "<br>" .$conn->error;
+	if ($conn->query($sql) === TRUE){
+		//hvis insetting velykket, så viser suksessmelding
+		echo "inserted into database";
+	} else {
+		//hvis ikke velykket så viser error-melding
+		echo "error:" . $sql. "<br>" .$conn->error;
+	}
 }
 
 //lukker databaseforbindelsen
