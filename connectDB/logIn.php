@@ -28,6 +28,7 @@ if(!$username || !$password){
 	exit;
 }
 echo "test2";
+
 $uCheck = "SELECT username FROM user WHERE username = ?";
 $uStmt = $conn->prepare($uCheck);
 $uStmt->bind_param("s", $username);
@@ -42,14 +43,14 @@ if($uResult->num_rows == 0){
 	exit;
 }
 $uStmt->close();
-echo "test3";
+echo "test4";
 
-$sql = "SELECT userId, mail, password FROM user WHERE username = ?";
+$sql = "SELECT userId, password FROM user WHERE username = ?";
 $stmt = $conn->prepare($sql);
 $query->bind_param("s", $username);
 $query->execute();
 $result = $query->get_result();
-echo "test4";
+echo "test5";
 
 $user = $result->fetch_assoc();
 if(!$user || !password_verify($password, $user['password'])){
@@ -58,11 +59,11 @@ if(!$user || !password_verify($password, $user['password'])){
 	$conn->close();
 	exit;
 }
-echo "test5";
+echo "test6";
 
 session_start();
 $_SESSION["id"] = $user["id"];
-echo "test6";
+echo "test7";
 
 $query->close();
 $conn->close();
