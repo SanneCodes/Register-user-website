@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 //database tilgangsdata
 $database = "loginDB";
 $servername = "localhost";
@@ -64,9 +66,8 @@ echo "Login successful! Welcome, " . $username . "!";
 header("Location: ../html/mainpage.html");
 
 session_start();
-$_SESSION["id"] = $user["userId"];
-
-
+$_SESSION["userId"] = $user["userId"];
+$_SESSION["username"] = $user["username"];
 
 $stmt->close();
 $conn->close();
