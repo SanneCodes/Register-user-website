@@ -65,7 +65,6 @@ echo "test6";
 echo "Login successful! Welcome, " . $username . "!";
 header("Location: ../html/mainpage.html");
 
-session_start();
 $_SESSION["userId"] = $user["userId"];
 $_SESSION["username"] = $user["username"];
 
