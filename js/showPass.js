@@ -1,10 +1,10 @@
-var checkbox = document.getElementById('showPassword');
-var password = document.getElementById('passwordInput');
+var showPass = document.getElementById('showPassword');
+var passInput = document.getElementById('passwordInput');
 
-checkbox.addEventListener('change', function(){
-	if (checkbox.checked){
-		password.type = "text";
-	} else{
-		password.type = "password";
-	}
-}
+showPass.addEventListener('change', function() {
+    if (showPass.checked) {
+        passInput.type = 'text';
+    } else {
+        passInput.type = 'password';
+    }
+});
