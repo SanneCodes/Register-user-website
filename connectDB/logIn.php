@@ -60,9 +60,12 @@ if(!$user || !password_verify($password, $user['password'])){
 }
 echo "test6";
 
+echo "Login successful! Welcome, " . $username . "!";
+
 session_start();
 $_SESSION["id"] = $user["userId"];
-echo "test7";
+
+
 
 $stmt->close();
 $conn->close();
