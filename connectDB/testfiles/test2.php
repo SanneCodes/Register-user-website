@@ -1,48 +1,64 @@
 <?php
-//database tilgangsdata
-$database = "fordypningsoppgave";
+
+
+$database = "loginDB";
 $servername = "localhost";
 $username = "bruker23";
 $password = "12345";
 
-//koble til databasen
+
 $conn = new mysqli($servername, $username, $password, $database);
 
-//sjekk tilkoblingen
+
 if ($conn->connect_error)
-{	//hvis tilkoblingen mislykkes, vis feilmelding og avslutt
+{	
 	die("Connection failed: " . $conn->connect_error);
 }
-//hvis tilkobling vellykket, vis suksessmelding
+
 echo "Connected successfully";
 
-//real_escape_string beskytter mot SQL-injisering ved å behandle brukerinput før det behandles i SQL-spørringen
-$mail = $conn->real_escape_string($_POST['mailInput']);
-$username = $conn->real_escape_string($_POST['usernameInput']);
-$password = $conn->real_escape_string($_POST['passwordInput']);
+$mail = $_POST['mailInput'] ?? null;
+$username = $_POST['usernameInput'] ?? null;
+$password = $_POST['passwordInput'] ?? null;
 
-$duplicate_check_sql = "SELECT * FROM User WHERE username='$username'";
-$duplicate_check_result = $conn->query($duplicate_check_sql);
-
-if (mysqli_num_rows($duplicate_check_result) > 0){
-	//hvis brukernavn duplikat funnet vis error
-	echo "ERROR! username allready exists";
-} else {
-	//insert bruker i db
-	$sql = "INSERT INTO User (mail, username, password) VALUES ('$mail', '$username', '$password')";
-	//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
-	//Utfører spørringen
-	
-	if ($conn->query($sql) === TRUE){
-		//hvis insetting velykket, så viser suksessmelding
-		echo "yay it inserted";
-	} else {
-		//hvis ikke velykket så viser error-melding
-		echo "error:" . $sql. "<br>" .$conn->error;
+if (!$username || !$password) {
+    echo "All fields need to be completed";
+    exit;
 }
 
-//lukker databaseforbindelsen
+$uCheck = "SELECT username FROM user WHERE username = ?";
+$uStmt = $conn->prepare($uCheck);
+$uStmt->bind_param("s", $username);
+$uStmt->execute();
+$uResult = $uStmt->get_result();
+
+if ($uResult->num_rows == 0) {
+    echo "Username does not exist";
+    $uStmt->close();
+    $conn->close();
+    exit;
+}
+$uStmt->close();
+
+$sql = "SELECT userId, password, mail FROM user WHERE username = ?";
+$query = $conn->prepare($sql);
+$query->bind_param("s", $username);
+$query->execute();
+$result = $query->get_result();
+
+$user = $result->fetch_assoc();
+if (!$user || !password_verify($password, $user['password'])) {
+    echo "Error: the username or password isn't correct";
+    $query->close();
+    $conn->close();
+    exit;
+}
+
+session_start();
+$_SESSION['id'] = $user['id'];
+
+$query->close();
 $conn->close();
 
-
 ?>
+
