@@ -63,7 +63,7 @@ if(!$user || !password_verify($password, $user['password'])){
 echo "test6";
 
 echo "Login successful! Welcome, " . $username . "!";
-header("Location: ../html/mainpage.html");
+header("Location: ../html/mainpage.php");
 
 $_SESSION["userId"] = $user["userId"];
 $_SESSION["username"] = $user["username"];
