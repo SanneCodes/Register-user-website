@@ -17,7 +17,6 @@ if ($conn->connect_error)
 //hvis tilkobling vellykket, vis suksessmelding
 echo "Connected successfully";
 
-//real_escape_string beskytter mot SQL-injisering ved å behandle brukerinput før det behandles i SQL-spørringen
 $mail = $_POST['mailInput'] ?? null;
 $username = $_POST['usernameInput'] ?? null;
 $password = $_POST['passwordInput'] ?? null;
@@ -47,25 +46,25 @@ echo "test4";
 
 $sql = "SELECT userId, password FROM user WHERE username = ?";
 $stmt = $conn->prepare($sql);
-$query->bind_param("s", $username);
-$query->execute();
-$result = $query->get_result();
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
 echo "test5";
 
 $user = $result->fetch_assoc();
 if(!$user || !password_verify($password, $user['password'])){
 	echo "Wrong username or password";
-	$query->close();
+	$stmt->close();
 	$conn->close();
 	exit;
 }
 echo "test6";
 
 session_start();
-$_SESSION["id"] = $user["id"];
+$_SESSION["id"] = $user["userId"];
 echo "test7";
 
-$query->close();
+$stmt->close();
 $conn->close();
 
 ?>
