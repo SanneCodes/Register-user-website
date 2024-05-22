@@ -42,6 +42,7 @@ else{
 		//hvis ikke velykket så viser error-melding
 		echo "error:" . $sql. "<br>" .$conn->error;
 	}
+	header("Location: ../html/login.html");
 }
 
 //lukker databaseforbindelsen
