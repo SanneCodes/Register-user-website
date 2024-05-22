@@ -23,7 +23,7 @@ $username = $_POST['usernameInput'] ?? null;
 $password = $_POST['passwordInput'] ?? null;
 
 if(!$username || !$password){
-	echo"All fields need to be compleated";
+	echo"All fields need to be completed";
 	exit;
 }
 
