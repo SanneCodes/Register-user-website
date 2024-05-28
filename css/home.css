@@ -1,3 +1,16 @@
+/* GENERAL */
+
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+    opacity: 80%;
+}
+
+/* NAVBAR */
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -27,4 +40,27 @@ li a:hover {
 
 span {
     float: left;
+}
+
+/* GALLERY */
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 250px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
 }

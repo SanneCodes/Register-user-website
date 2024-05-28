@@ -20,6 +20,7 @@ if (!isset($_SESSION["userId"])){
         <ul>
             <span><li><a href="mainpage.php">LOGO!</a></li></span>
 
+            <li><a href="user.html">My profile</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -27,13 +28,21 @@ if (!isset($_SESSION["userId"])){
         </ul>
     </nav>
 
-    <h1>gallery</h1>
+    <h1>GALLERY</h1>
+    <h3>MY PROGRAMS</h3>
 
     <div class="gallery">
         <a href="http://192.168.1.51" target="_blank">
-            <img src="../media/ArtJurney.png" alt="image of ArtJurney game" width="500" height="auto">
+            <img src="../media/ArtJurney.png" alt="image of ArtJurney game">
         </a>
         <div class="desc">Art Jurney</div>
+    </div>
+
+    <div class="gallery">
+        <a href="http://192.168.33.88" target="_blank">
+            <img src="../media/FlappyPenguin.png" alt="image of FlappyPenguin game">
+        </a>
+        <div class="desc">Flappy Penguin</div>
     </div>
 
 </body>
