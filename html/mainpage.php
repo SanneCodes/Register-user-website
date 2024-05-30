@@ -24,12 +24,12 @@ if (!isset($_SESSION["userId"])){
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="mainpage.php">Home</a></li>
+            <li><a href="mainpage.php" class="main">Home</a></li>
         </ul>
     </nav>
 
-    <h1>GALLERY</h1>
-    <h3>MY PROGRAMS</h3>
+    <h1>&#127800; GALLERY &#127800;</h1>
+    <h3>&#127799; MY PROGRAMS &#127799;</h3>
 
     <div class="gallery">
         <a href="http://192.168.1.51" target="_blank">
@@ -47,4 +47,5 @@ if (!isset($_SESSION["userId"])){
 
 </body>
 <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/nav.css">
 </html>
