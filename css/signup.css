@@ -1,0 +1,52 @@
+@font-face {
+    font-family: SpaceMonoReg;
+    src: url("../fonts/SpaceMono-Regular.ttf");
+}
+
+input{
+    height: 30px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: hotpink;
+    background-color: white;
+    margin: 1em;
+}
+
+body{
+    font-family: SpaceMonoReg;
+    text-align: center;
+}
+
+.container{
+    background-color: pink;
+    margin: 2em 35em;
+    height: 51.5em;
+    padding: 1em;
+    border-radius: 3em;
+}
+
+input[type=checkbox] {
+    accent-color: white;
+}
+
+
+#showPassword{
+    width: 20px;
+}
+
+button{
+    font-family: SpaceMonoReg;
+    border-color: white;
+    height: 3em;
+    width: 10em;
+    border-radius: 15px;
+}
+
+button:hover{
+    color: rgb(158, 0, 79);
+    border-color: white;
+}
+
+a{
+    
+}
