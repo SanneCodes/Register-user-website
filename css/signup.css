@@ -14,7 +14,7 @@ body{
 .container{
     background-color: rgb(255, 167, 181);
 
-    margin: 2em 35em;
+    margin: 0;
     height: 51.5em;
     padding: 1em;
     border-radius: 3em;
@@ -23,16 +23,16 @@ body{
     justify-content: center;
 }
 
-input{
-    height: 60px;
-    width: 300px;
-    border-radius: 5px;
-    border-width: 3px;
-    margin: 1em;
+h1{
+    color: white;
+    text-shadow: 3px 3px rgb(255, 75, 165);
+    margin-bottom: 2em;
+}
 
-    border-color: rgb(255, 75, 165);
-    background-color: white;
-
+.inputs{
+    margin: auto;
+    text-align: right;
+    width: 32em;
 }
 
 label{
@@ -44,10 +44,16 @@ label{
     letter-spacing: 3px;
 }
 
-.inputs{
-    margin: auto;
-    text-align: right;
-    width: 32em;
+input{
+    height: 65px;
+    width: 300px;
+    border-radius: 5px;
+    border-width: 3px;
+    margin: 1em;
+
+    border-color: rgb(255, 75, 165);
+    background-color: white;
+
 }
 
 input[type=checkbox] {
@@ -56,27 +62,6 @@ input[type=checkbox] {
     margin-left: 10px;
     width: 20px;
     margin: 0 1em;
-}
-
-
-button{
-    font-family: SpaceMonoReg;
-
-    height: 3em;
-    width: 10em;
-    border-radius: 15px;
-    border-width: 3px;
-    margin: 1em 12em;
-    margin-top: 4em;
-
-    border-color: hotpink;
-    color: rgb(255, 75, 165);
-
-    font-size: 20px;
-}
-
-button:hover{
-    color: rgb(255, 0, 128);
 }
 
 .showPassCont{   
@@ -93,8 +78,19 @@ button:hover{
     letter-spacing: 3px;
 }
 
-h1{
-    color: white;
-    text-shadow: 3px 3px rgb(255, 75, 165);
-    margin-bottom: 2em;
+button{
+    font-family: SpaceMonoReg;
+
+    height: 3em;
+    width: 10em;
+    border-radius: 15px;
+    border-width: 3px;
+    font-size: 20px;
+
+    border-color: hotpink;
+    color: rgb(255, 75, 165);
+}
+
+button:hover{
+    color: rgb(255, 0, 128);
 }
