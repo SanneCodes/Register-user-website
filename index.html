@@ -8,15 +8,16 @@
 </head>
 <body>
     <div class="container">
+        <h1>Sign up</h1>
         <form name="frmSignUp" method="post" action="/connectDB/signUp.php">
-            <label>Mail:</label>
-            <input type="mail" name="mailInput"><br>
-            <label>Username:</label>
-            <input type="text" autocomplete="username" name="usernameInput"><br>
-            <div class="pass">
-                <label>Password:</label>
-                <input type="password" name="passwordInput" id="passwordInput" autocomplete="current-password">
-                <input type="checkbox"id="showPassword" > <br>
+            <div class="inputs">
+                <label>Mail:</label> <input type="mail" name="mailInput"> <br>
+                <label>Username:</label> <input type="text" autocomplete="username" name="usernameInput"> <br>
+                <label>Password:</label> <input type="password" name="passwordInput" id="passwordInput" autocomplete="current-password" >
+                <div class="showPassCont">
+                    <a>Show password:</a>
+                    <input type="checkbox" id="showPassword">
+                </div>
             </div>
             <button>Create user</button>
         </form>

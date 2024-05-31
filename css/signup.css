@@ -3,50 +3,99 @@
     src: url("../fonts/SpaceMono-Regular.ttf");
 }
 
-input{
-    height: 30px;
-    border-radius: 5px;
-    border-width: 3px;
-    border-color: hotpink;
-    background-color: white;
-    margin: 1em;
-}
 
 body{
     font-family: SpaceMonoReg;
-    text-align: center;
-}
 
+    text-align: center;
+    align-items: center;
+    
+}
 .container{
-    background-color: pink;
+    background-color: rgb(255, 167, 181);
+
     margin: 2em 35em;
     height: 51.5em;
     padding: 1em;
     border-radius: 3em;
+
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    height: 60px;
+    width: 300px;
+    border-radius: 5px;
+    border-width: 3px;
+    margin: 1em;
+
+    border-color: rgb(255, 75, 165);
+    background-color: white;
+
+}
+
+label{
+    color: white;
+    text-shadow: 3px 3px rgb(255, 75, 165);
+
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.inputs{
+    margin: auto;
+    text-align: right;
+    width: 35em;
 }
 
 input[type=checkbox] {
     accent-color: white;
-}
 
-
-#showPassword{
+    margin-left: 10px;
     width: 20px;
+    margin: 0 1em;
 }
+
 
 button{
     font-family: SpaceMonoReg;
-    border-color: white;
+
     height: 3em;
     width: 10em;
     border-radius: 15px;
+    border-width: 3px;
+    margin: 1em 12em;
+    margin-top: 2em;
+
+    border-color: hotpink;
+    color: rgb(255, 75, 165);
+    
+    font-size: 20px;
+
 }
 
 button:hover{
-    color: rgb(158, 0, 79);
-    border-color: white;
+    color: rgb(255, 0, 128);
 }
 
-a{
-    
+.showPassCont{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    text-shadow: 2px 2px rgb(255, 75, 165);
+    width: 15em;
+    float: right;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+h1{
+    color: white;
+    text-shadow: 3px 3px rgb(255, 75, 165);
+    margin-bottom: 2em;
 }
