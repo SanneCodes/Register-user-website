@@ -9,13 +9,12 @@ body{
 
     text-align: center;
     align-items: center;
-    
 }
+
 .container{
     background-color: rgb(255, 167, 181);
 
     margin: 0;
-    height: 51.5em;
     padding: 1em;
     border-radius: 3em;
 
@@ -33,6 +32,7 @@ h1{
     margin: auto;
     text-align: right;
     width: 24.5em;
+
 }
 label{
     color: white;
@@ -84,6 +84,7 @@ button{
     border-radius: 15px;
     border-width: 3px;
     font-size: 20px;
+    margin: 1em;
 
     border-color: hotpink;
     color: rgb(255, 75, 165);
@@ -91,4 +92,8 @@ button{
 
 button:hover{
     color: rgb(255, 0, 128);
+}
+
+.showPassDivider{
+    height: 4em;
 }
