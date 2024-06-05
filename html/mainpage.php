@@ -13,26 +13,40 @@ if (!isset($_SESSION["userId"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create account</title>
-    <link rel="stylesheet" href="css/signup.css">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sign up</h1>
-        <form name="frmSignUp" method="post" action="/connectDB/signUp.php">
-            <div class="inputs">
-                <label>Mail:</label> <input type="mail" name="mailInput"> <br>
-                <label>Username:</label> <input type="text" autocomplete="username" name="usernameInput"> <br>
-                <label>Password:</label> <input type="password" name="passwordInput" id="passwordInput" autocomplete="current-password" >
-                <div class="showPassCont">
-                    <a>Show password:</a>
-                    <input type="checkbox" id="showPassword">
-                </div>
-            </div>
-            <button>Create user</button>
-        </form>
-        <a href="/html/login.html">Already have an account? Login here</a>
+    <nav>
+        <ul>
+            <span><li><a href="mainpage.php">LOGO!</a></li></span>
+
+            <li><a href="user.html">My profile</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="mainpage.php" class="main">Home</a></li>
+        </ul>
+    </nav>
+
+    <h1>&#127800; GALLERY &#127800;</h1>
+    <h3>&#127799; MY PROGRAMS &#127799;</h3>
+
+    <div class="gallery">
+        <a href="http://192.168.1.51" target="_blank">
+            <img src="../media/ArtJurney.png" alt="image of ArtJurney game">
+        </a>
+        <div class="desc">Art Jurney &#127804;</div>
     </div>
+
+    <div class="gallery">
+        <a href="http://192.168.33.88" target="_blank">
+            <img src="../media/FlappyPenguin.png" alt="image of FlappyPenguin game">
+        </a>
+        <div class="desc">Flappy Penguin &#127804;</div>
+    </div>
+
 </body>
-<script src="/js/showPass.js"></script>
 </html>
