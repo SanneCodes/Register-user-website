@@ -20,7 +20,7 @@
         </ul>
     </nav>
 
-    <?php echo isset($_SESSION['usernameInputit'])?> 
+    <?php echo isset($_SESSION['usernameInput'])?> 
 
     <form name="frmLogOut" method="post" action="../connectDB/logOut.php">
         <button>Log out</button>
