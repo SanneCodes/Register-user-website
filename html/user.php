@@ -19,8 +19,8 @@
             <li><a href="mainpage.php">Home</a></li>
         </ul>
     </nav>
-
-    <h1>&#127799; <?php echo $_SESSION["username"]; ?> &#127799;</h1>
+    
+    <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest'; ?> 
 
     <form name="frmLogOut" method="post" action="../connectDB/logOut.php">
         <button>Log out</button>
