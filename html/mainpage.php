@@ -1,12 +1,4 @@
-<?php
-
-session_start();
-if (!isset($_SESSION["userId"])){
-    header("Location: login.html");
-    exit;
-}
-
-?>
+<?php require 'noHeader.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
