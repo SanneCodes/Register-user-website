@@ -1,9 +1,11 @@
+<?php require 'noHeader.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My projects</title>
     <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
@@ -11,10 +13,10 @@
         <ul>
             <span><li><a href="mainpage.php">LOGO!</a></li></span>
 
-            <li><a href="user.html">My profile</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="projects.html" class="main">Projects</a></li>
+            <li><a href="user.php">My profile</a></li>
+            <li><a href="about.php" class="main">About me</a></li>
+            <li><a href="contact.php">Contact me</a></li>
+            <li><a href="projects.php">Projects</a></li>
             <li><a href="mainpage.php">Home</a></li>
         </ul>
     </nav>

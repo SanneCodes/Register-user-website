@@ -1,19 +1,21 @@
+<?php require 'noHeader.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact me</title>
 </head>
 <body>
     <nav>
         <ul>
             <span><li><a href="mainpage.php">LOGO!</a></li></span>
 
-            <li><a href="user.html">My profile</a></li>
-            <li><a href="about.html" class="main">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="user.php">My profile</a></li>
+            <li><a href="about.php" class="main">About me</a></li>
+            <li><a href="contact.php">Contact me</a></li>
+            <li><a href="projects.php">Projects</a></li>
             <li><a href="mainpage.php">Home</a></li>
         </ul>
     </nav>
