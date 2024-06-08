@@ -1,4 +1,5 @@
 <?php
+echo "test connection";
 //database tilgangsdata
 $database = "eksamen";
 $servername = "localhost";
@@ -33,7 +34,6 @@ else{
 	//insert bruker i db
 	$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$passwordHashed')";
 	//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
-
 	//Utfører spørringen
 	if ($conn->query($sql) === TRUE){
 		//hvis insetting velykket, så viser suksessmelding
