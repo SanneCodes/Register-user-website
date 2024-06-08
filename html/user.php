@@ -29,6 +29,9 @@ session_start();
     if (isset($_SESSION['username'])) {
         echo "Welcome, " . htmlspecialchars($_SESSION['username']) . "!";
     }
+    else{
+        echo "no username found!";
+    }
     ?>
 
     <form name="frmLogOut" method="post" action="../connectDB/logOut.php">
