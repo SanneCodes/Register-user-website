@@ -1,4 +1,9 @@
-<?php require 'noHeader.php';?>
+<?php 
+
+require 'noHeader.php';
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +25,11 @@
         </ul>
     </nav>
 
-    <?php echo isset($_SESSION['usernameInput'])?> 
+    <?php
+    if (isset($_SESSION['username'])) {
+        echo "Welcome, " . htmlspecialchars($_SESSION['username']) . "!";
+    }
+    ?>
 
     <form name="frmLogOut" method="post" action="../connectDB/logOut.php">
         <button>Log out</button>

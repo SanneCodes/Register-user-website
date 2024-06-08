@@ -16,6 +16,7 @@ if ($conn->connect_error)
 //hvis tilkobling vellykket, vis suksessmelding
 echo "Connected successfully";
 
+
 //real_escape_string beskytter mot SQL-injisering ved å behandle brukerinput før det behandles i SQL-spørringen
 $mail = $conn->real_escape_string($_POST['mailInput']);
 $username = $conn->real_escape_string($_POST['usernameInput']);
