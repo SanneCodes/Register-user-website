@@ -3,7 +3,7 @@
 session_start();
 
 //database tilgangsdata
-$database = "loginDB";
+$database = "eksamen";
 $servername = "localhost";
 $username = "bruker23";
 $password = "12345";
