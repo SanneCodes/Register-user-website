@@ -20,6 +20,8 @@
         </ul>
     </nav>
 
+    <h1>&#127799; <?php echo $_SESSION["username"]; ?> &#127799;</h1>
+
     <form name="frmLogOut" method="post" action="../connectDB/logOut.php">
         <button>Log out</button>
     </form>
