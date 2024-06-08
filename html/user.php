@@ -19,6 +19,12 @@
             <li><a href="mainpage.php">Home</a></li>
         </ul>
     </nav>
+
+    <form name="frmLogOut" method="post" action="../connectDB/logOut.php">
+        <button>Log out</button>
+    </form>
+
 </body>
 <link rel="stylesheet" href="../css/nav.css">
+<link rel="stylesheet" href="../css/user.css">
 </html>
