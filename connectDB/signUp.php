@@ -38,7 +38,7 @@ else{
 	if ($conn->query($sql) === TRUE){
 		//hvis insetting velykket, så viser suksessmelding
 		echo "inserted into database";
-		$_SESSION['username'] = $usernameInput;
+		$_SESSION['username'] = $username;
 	} else {
 		//hvis ikke velykket så viser error-melding
 		echo "error:" . $sql. "<br>" .$conn->error;
