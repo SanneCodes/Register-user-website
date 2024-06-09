@@ -1,3 +1,7 @@
+form{
+    text-align: center;
+}
+
 button{
     font-family: SpaceMonoReg;
 
@@ -6,7 +10,7 @@ button{
     border-radius: 15px;
     border-width: 3px;
     font-size: 20px;
-    margin: 1em;
+    margin: 3em;
 
     border-color: hotpink;
     color: rgb(255, 75, 165);
