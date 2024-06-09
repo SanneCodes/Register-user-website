@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //database tilgangsdata
 $database = "eksamen";
 $servername = "localhost";

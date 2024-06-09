@@ -1,8 +1,7 @@
 <?php 
+session_start();
 
 require 'noHeader.php';
-
-session_start();
 
 $username = $_SESSION['username'];
 
@@ -28,7 +27,10 @@ $username = $_SESSION['username'];
         </ul>
     </nav>
 
-    <h1>Welcome, <?php echo htmlspecialchars($username); ?>!</h1>
+    <h1>Welcome, <?php
+    print_r($_SESSION);
+    echo htmlspecialchars($username); 
+    ?>!</h1>
 
     <form name="frmLogOut" method="post" action="../connectDB/logOut.php">
         <button>Log out</button>
