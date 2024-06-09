@@ -1,5 +1,9 @@
 /* GENERAL */
 
+body{
+    text-align: center;
+}
+
 h1{
     text-align: center;
 }
@@ -9,10 +13,22 @@ h3{
     opacity: 80%;
 }
 
+.container{
+    margin: auto;
+
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+
+    width: 98vw;
+    height: 20vw;
+}
+
 /* GALLERY */
 
 div.gallery {
-    margin: 5px;
+    margin: auto 5em;
     border: 1px solid hotpink;
     float: left;
     width: 250px;

@@ -20,7 +20,7 @@
             <li><a href="mainpage.php">Home</a></li>
         </ul>
     </nav>
-    <h2>Test my projects</h2>
+    <h2>&#127800; Test my unity projects &#127800;</h2>
     <div class="gallery">
         <a href="http://192.168.1.51" target="_blank">
             <img src="../media/ArtJurney.png" alt="image of ArtJurney game">
