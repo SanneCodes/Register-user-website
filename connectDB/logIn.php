@@ -58,10 +58,14 @@ if(!$user || !password_verify($password, $user['password'])){
 $_SESSION["userId"] = $user["userId"];
 $_SESSION["username"] = $user["username"];
 
+// Debugging statements
+echo "Session variables set:";
+print_r($_SESSION);
+
 $stmt->close();
 $conn->close();
 
-header("Location: ../html/mainpage.php");
+
 
 exit();
 
