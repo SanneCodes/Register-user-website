@@ -62,6 +62,8 @@ $_SESSION["username"] = $user["username"];
 echo "Session variables set:";
 print_r($_SESSION);
 
+Location("Header: ../html/mainpage.php")
+
 $stmt->close();
 $conn->close();
 
