@@ -22,20 +22,17 @@ echo "Connected successfully";
 $mail = $_POST['mailInput'] ?? null;
 $username = $_POST['usernameInput'] ?? null;
 $password = $_POST['passwordInput'] ?? null;
-echo "test1";
 
 if(!$username || !$password){
 	echo"All fields need to be completed";
 	exit;
 }
-echo "test2";
 
 $uCheck = "SELECT username FROM user WHERE username = ?";
 $uStmt = $conn->prepare($uCheck);
 $uStmt->bind_param("s", $username);
 $uStmt->execute();
 $uResult = $uStmt->get_result();
-echo "test3";
 
 if($uResult->num_rows == 0){
 	echo "Username not exist";
@@ -44,14 +41,12 @@ if($uResult->num_rows == 0){
 	exit;
 }
 $uStmt->close();
-echo "test4";
 
 $sql = "SELECT userId, password FROM user WHERE username = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
-echo "test5";
 
 $user = $result->fetch_assoc();
 if(!$user || !password_verify($password, $user['password'])){
@@ -60,15 +55,15 @@ if(!$user || !password_verify($password, $user['password'])){
 	$conn->close();
 	exit;
 }
-echo "test6";
-
-echo "Login successful! Welcome, " . $username . "!";
-header("Location: ../html/mainpage.php");
 
 $_SESSION["userId"] = $user["userId"];
 $_SESSION["username"] = $user["username"];
 
 $stmt->close();
 $conn->close();
+
+header("Location: ../html/mainpage.php");
+
+exit();
 
 ?>
