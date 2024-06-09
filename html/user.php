@@ -3,8 +3,15 @@ session_start();
 
 require 'noHeader.php';
 
-$username = $_SESSION['username'];
-
+// Check if the username is set in the session
+if(isset($_SESSION['username'])) {
+    // The username is set, so you can use it
+    $username = $_SESSION['username'];
+    echo "Welcome back, $username!";
+} else {
+    // The username is not set in the session, handle the case accordingly
+    echo "You are not logged in.";
+}
 ?>
 
 <!DOCTYPE html>
