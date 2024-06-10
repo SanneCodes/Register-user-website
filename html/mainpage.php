@@ -28,18 +28,47 @@
 
     <div class="container">
         <div class="gallery">
-            <a href="/projects/ArtJurney.php" target="_blank">
+            <a href="#ArtJurney">
                 <img src="../media/ArtJurney.png" alt="image of ArtJurney game">
             </a>
             <div class="desc">Art Jurney &#127804;</div>
         </div>
     
-        <div class="gallery">
-            <a href="/projects/FlappyPenguin.php" target="_blank">
+        <div class="gallery"->
+            <a href="#FlappyPenguin">
                 <img src="../media/FlappyPenguin.png" alt="image of FlappyPenguin game">
             </a>
             <div class="desc">Flappy Penguin &#127804;</div>
         </div>
+
+        <div class="gallery">
+            <a href="#TicTacToe">
+                <img src="../media/TicTacToe.png" alt="image of TicTacToe game">
+            </a>
+            <div class="desc">Tic Tac Toe &#127804;</div>
+        </div>
+
+        <div class="gallery">
+            <a href="#Kalkulator">
+                <img src="../media/Kalkulator.png" alt="image of FlappyPenguin game">
+            </a>
+            <div class="desc">Flappy Penguin &#127804;</div>
+        </div>
+    </div>
+
+    <div class="section" id="ArtJurney">
+        <h1> Art Jurney </h1>
+    </div>
+
+    <div class="section" id="FlappyPenguin">
+        <h1> Flappy Penguin </h1>
+    </div>    
+    <div class="section" id="TicTacToe">
+        <h1> Tic Tac Toe </h1>
+    </div>
+
+    <div class="section" id="Kalkulator">
+        <h1> Kalkulator </h1>
     </div>
 
 </body>

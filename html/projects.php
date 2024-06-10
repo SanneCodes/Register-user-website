@@ -38,5 +38,4 @@
         </div>
     </div>
 </body>
-<link rel="stylesheet" href="../css/nav.css">
 </html>

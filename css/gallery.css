@@ -1,6 +1,11 @@
 /* GENERAL */
+@font-face {
+    font-family: SpaceMonoReg;
+    src: url("../fonts/SpaceMono-Regular.ttf");
+}
 
 body{
+    font-family: SpaceMonoReg;
     text-align: center;
 }
 
@@ -28,19 +33,21 @@ h3{
 /* GALLERY */
 
 div.gallery {
-    margin: auto 5em;
-    border: 1px solid hotpink;
+    margin: 1em 3em;
     float: left;
-    width: 250px;
+    width: 248px;
+    height: 153px;
 }
 
 div.gallery:hover {
-    border: 1px solid rgb(255, 0, 128);
+    width: 248px;
+    height: 150px;
 }
 
 div.gallery img {
-    width: 100%;
     height: auto;
+    width: 248px;
+    height: 150px;
 }
 
 div.desc {

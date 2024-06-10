@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About me</title>
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 <body>
     <nav>
@@ -20,5 +21,4 @@
         </ul>
     </nav>
 </body>
-<link rel="stylesheet" href="../css/nav.css">
 </html>

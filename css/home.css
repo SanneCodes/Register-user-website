@@ -1,0 +1,15 @@
+@font-face {
+    font-family: SpaceMonoReg;
+    src: url("../fonts/SpaceMono-Regular.ttf");
+}
+
+body{
+    font-family: SpaceMonoReg;
+}
+
+.section{
+    background-color: pink;
+
+    margin: 2em;
+    padding: 20em;
+}

@@ -1,4 +1,12 @@
 /* NAVBAR */
+@font-face {
+    font-family: SpaceMonoReg;
+    src: url("../fonts/SpaceMono-Regular.ttf");
+}
+
+body{
+    font-family: SpaceMonoReg;
+}
 
 ul {
     list-style-type: none;
