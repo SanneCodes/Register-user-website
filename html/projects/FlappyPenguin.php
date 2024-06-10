@@ -16,7 +16,7 @@
             <li><a href="about.php">About me</a></li>
             <li><a href="contact.php">Contact me</a></li>
             <li><a href="projects.php">Projects</a></li>
-            <li><a href="mainpage.php" class="main">Home</a></li>
+            <li><a href="mainpage.php">Home</a></li>
         </ul>
     </nav>
 </body>

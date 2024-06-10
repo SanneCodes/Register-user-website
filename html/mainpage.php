@@ -28,14 +28,14 @@
 
     <div class="container">
         <div class="gallery">
-            <a href="../projects/ArtJurney.php" target="_blank">
+            <a href="/projects/ArtJurney.php" target="_blank">
                 <img src="../media/ArtJurney.png" alt="image of ArtJurney game">
             </a>
             <div class="desc">Art Jurney &#127804;</div>
         </div>
     
         <div class="gallery">
-            <a href="../projects/FlappyPenguin.php" target="_blank">
+            <a href="/projects/FlappyPenguin.php" target="_blank">
                 <img src="../media/FlappyPenguin.png" alt="image of FlappyPenguin game">
             </a>
             <div class="desc">Flappy Penguin &#127804;</div>
