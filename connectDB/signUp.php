@@ -49,6 +49,7 @@ else{
 
 	if (strlen($password)<8){
 		echo '<script>alert("Password needs to be atleast 8 characters long.")</script>';
+		header("Location: ../index.html")
 	}
 	else{
 		if (specialChar($password) && capitalChar($password) && numChar($password) && whiteSpace($password)){
@@ -61,15 +62,17 @@ else{
 			if ($conn->query($sql) === TRUE){
 				//hvis insetting velykket, så viser suksessmelding
 				echo "inserted into database";
+				header("Location: ../html/login.html");
+				exit;
 			} else {
 				//hvis ikke velykket så viser error-melding
 				echo "error:" . $sql. "<br>" .$conn->error;
 			}
-			header("Location: ../html/login.html");
 		}
 		else{
 			echo '<script>alert("Your password must include a capital letter, a number and special characters")</script>';
 			header("Location: ../index.html");
+			exit;
 		}
 	}
 }
