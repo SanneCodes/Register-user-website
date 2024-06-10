@@ -32,22 +32,19 @@ if($uResult->num_rows != 0){
 }
 else{
 	function specialChar($password){
-		$specialChar = '/\W/';
-		return strpbrk($password, $specialChar) !== false;
+		return preg_match('/\W/', $password) === 1;
 	}
 
 	function capitalChar($password){
-		$capitalChar = '/[A-Z]/'
-		return strpbrk($password, $capitalChar) === 1;
+		return preg_match('/[A-Z]/', $password) === 1;
 	}
 
 	function numChar($password){
-		$numChar = '/\d/'
-		return strpbrk($password, $numChar) === 1;
+		return preg_match('/\d/', $password) === 1;
 	}
 
 	function whiteSpace($password){
-		$whiteSpace = ('/\s/')
+		return preg_match('/\s/', $password) === 0;
 	}
 
 	if (strlen($password)<8){
