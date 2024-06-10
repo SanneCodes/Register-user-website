@@ -11,13 +11,14 @@
         <h1>Sign up</h1>
         <form name="frmSignUp" method="post" action="/connectDB/signUp.php">
             <div class="inputs">
-                <label>Mail:</label> <input type="mail" name="mailInput"> <br>
+                <label>Mail:</label> <input type="email" name="mailInput"> <br>
                 <label>Username:</label> <input type="text" autocomplete="username" name="usernameInput"> <br>
                 <label>Password:</label> <input type="password" name="passwordInput" id="passwordInput" autocomplete="current-password">
                 <div class="showPassCont">
                     <a>Show password:</a>
                     <input type="checkbox" id="showPassword">
-                    <a><?php echo($_SESSION['error']) ?></a>
+                    <a><?php echo($_SESSION['errorLength']) ?></a>
+                    <a><?php echo($_SESSION['errorSyntax']) ?></a>
                 </div>
                 <button>Create user</button> 
             </div>     
@@ -29,5 +30,4 @@
     </div>
 </body>
 <script src="/js/showPass.js"></script>
-<script src="/js/securepass.js"></script>
 </html>

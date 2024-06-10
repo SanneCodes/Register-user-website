@@ -48,7 +48,7 @@ else{
 	}
 
 	if (strlen($password)<8){
-		$_SESSION['error'] = "Password needs to be atleast 8 characters long.";
+		$_SESSION['errorLength'] = "Password needs to be atleast 8 characters long.";
 		header("Location: ../index.php");
 		exit;
 	}
@@ -71,7 +71,7 @@ else{
 			}
 		}
 		else{
-			$_SESSION['error'] = "Your password must include: a capital letter, a number and a special character!";
+			$_SESSION['errorSyntax'] = "Your password must include: a capital letter, a number and a special character!";
 			header("Location: ../index.php");
 			exit;
 		}
