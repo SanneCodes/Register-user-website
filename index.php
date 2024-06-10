@@ -17,6 +17,7 @@
                 <div class="showPassCont">
                     <a>Show password:</a>
                     <input type="checkbox" id="showPassword">
+                    <a><?php echo($_SESSION['error']) ?></a>
                 </div>
                 <button>Create user</button> 
             </div>     
