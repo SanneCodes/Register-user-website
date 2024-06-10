@@ -33,15 +33,15 @@ h3{
 /* GALLERY */
 
 div.gallery {
-    margin: 1em 3em;
+    margin: 1em 2em;
     float: left;
-    width: 248px;
-    height: 153px;
+    width: 240px;
+    height: 145px;
 }
 
 div.gallery:hover {
-    width: 248px;
-    height: 150px;
+    width: 242px;
+    height: 147px;
 }
 
 div.gallery img {
@@ -53,7 +53,6 @@ div.gallery img {
 div.desc {
     padding: 15px;
     text-align: center;
-    background-color: pink;
 }
 
 div a {
