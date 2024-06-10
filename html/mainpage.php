@@ -13,17 +13,17 @@
 <body>
     <nav>
         <ul>
-            <span><li><a href="mainpage.html"><?php echo($_SESSION['$username']) ?></a></li></span>
+            <span><li><a href="mainpage.php">&#127800;</a></li></span>
 
-            <li><a href="user.html">My profile</a></li>
-            <li><a href="about.html">About me</a></li>
-            <li><a href="contact.html">Contact me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="mainpage.html" class="main">Home</a></li>
+            <li><a href="user.php">My profile</a></li>
+            <li><a href="about.php">About me</a></li>
+            <li><a href="contact.php">Contact me</a></li>
+            <li><a href="projects.php">Projects</a></li>
+            <li><a href="mainpage.php" class="main">Home</a></li>
         </ul>
     </nav>
 
-    <h1>&#127800; GALLERY &#127800;</h1>
+    <h1>&#127800; Welcome to my gallery <?php echo($_SESSION['username']) ?> ! &#127800;</h1>
     <h3>&#127799; MY PROGRAMS &#127799;</h3>
 
     <div class="container">

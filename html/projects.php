@@ -11,13 +11,13 @@
 <body>
     <nav>
         <ul>
-            <span><li><a href="mainpage.html">LOGO!</a></li></span>
+            <span><li><a href="mainpage.php">&#127800;</a></li></span>
 
-            <li><a href="user.html">My profile</a></li>
-            <li><a href="about.html">About me</a></li>
-            <li><a href="contact.html">Contact me</a></li>
-            <li><a href="projects.html" class="main">Projects</a></li>
-            <li><a href="mainpage.html">Home</a></li>
+            <li><a href="user.php">My profile</a></li>
+            <li><a href="about.php">About me</a></li>
+            <li><a href="contact.php">Contact me</a></li>
+            <li><a href="projects.php" class="main">Projects</a></li>
+            <li><a href="mainpage.php">Home</a></li>
         </ul>
     </nav>
 
