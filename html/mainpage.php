@@ -7,38 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/gallery.css">
     <link rel="stylesheet" href="../css/nav.css">
 </head>
 <body>
     <nav>
         <ul>
-            <span><li><a href="mainpage.php">LOGO!</a></li></span>
+            <span><li><a href="mainpage.html"><?php echo($_SESSION['$username']) ?></a></li></span>
 
-            <li><a href="user.php">My profile</a></li>
-            <li><a href="about.php">About me</a></li>
-            <li><a href="contact.php">Contact me</a></li>
-            <li><a href="projects.php">Projects</a></li>
-            <li><a href="mainpage.php" class="main">Home</a></li>
+            <li><a href="user.html">My profile</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="contact.html">Contact me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="mainpage.html" class="main">Home</a></li>
         </ul>
     </nav>
 
     <h1>&#127800; GALLERY &#127800;</h1>
     <h3>&#127799; MY PROGRAMS &#127799;</h3>
-    <h1>DU HETTE <?php echo($_SESSION['username']) ?> !!!</h1>
 
-    <div class="gallery">
-        <a href="http://192.168.1.51" target="_blank">
-            <img src="../media/ArtJurney.png" alt="image of ArtJurney game">
-        </a>
-        <div class="desc">Art Jurney &#127804;</div>
-    </div>
-
-    <div class="gallery">
-        <a href="http://192.168.33.88" target="_blank">
-            <img src="../media/FlappyPenguin.png" alt="image of FlappyPenguin game">
-        </a>
-        <div class="desc">Flappy Penguin &#127804;</div>
+    <div class="container">
+        <div class="gallery">
+            <a href="../projects/ArtJurney.php" target="_blank">
+                <img src="../media/ArtJurney.png" alt="image of ArtJurney game">
+            </a>
+            <div class="desc">Art Jurney &#127804;</div>
+        </div>
+    
+        <div class="gallery">
+            <a href="../projects/FlappyPenguin.php" target="_blank">
+                <img src="../media/FlappyPenguin.png" alt="image of FlappyPenguin game">
+            </a>
+            <div class="desc">Flappy Penguin &#127804;</div>
+        </div>
     </div>
 
 </body>
