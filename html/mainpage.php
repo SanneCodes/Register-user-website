@@ -25,6 +25,7 @@
 
     <h1>&#127800; GALLERY &#127800;</h1>
     <h3>&#127799; MY PROGRAMS &#127799;</h3>
+    <h1>DU HETTE <?php echo($_SESSION['username']) ?> !!!</h1>
 
     <div class="gallery">
         <a href="http://192.168.1.51" target="_blank">

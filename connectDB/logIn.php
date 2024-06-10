@@ -56,6 +56,7 @@ if(!$user || !password_verify($password, $user['password'])){
 }
 
 $_SESSION["userId"] = $user["userId"];
+$_SESSION['username'] = $username;
 
 header("Location: ../html/mainpage.php");
 
