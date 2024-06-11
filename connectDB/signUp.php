@@ -31,26 +31,23 @@ if($uResult->num_rows != 0){
 	$_SESSION['errorUsername'] = "Username already exists.";
     header("Location: ../index.php");
     exit;
-} else{ //if pass smaller than 8 char, define session with error
+} else{
 	if(strlen($password)<8){
-		$_SESSION['errorLength'] = "Password has to be atleast 8 characters!";
-		header("Location: ../index.php");
-		exit;
-	}
-	else{
+		$_SESSION['errorLength'] = "Your password needs to be more than 8 characters!";
+	} else{
 		function capital($password){
 			return preg_match('/[A-Z]/', $password) === 1;
-		}
-		function space($password){
-			return preg_match('/\s/', $password) === 0;
-		}
-		function digit($password){
-			return preg_match('/\d/', $password) === 1;
 		}
 		function special($password){
 			return preg_match('/\W/', $password) === 1;
 		}
-		if(capital($password) && space($password) && digit($password) && special($password)){
+		function digit($password){
+			return preg_match('/\d/', $password) === 1;
+		}
+		function space($password){
+			return preg_match('/\s/', $password) === 0;
+		}
+		if(capital($password) && special($password) && digit($password) && space($password)){
 			$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
 	
 			//insert bruker i db
@@ -67,8 +64,8 @@ if($uResult->num_rows != 0){
 				echo "error:" . $sql. "<br>" .$conn->error;
 			}
 		} else{
-			$_SESSION['errorSyntax'] = "Your password must include: a capital letter, a number, and a special character!";
-			header("Location: ../index.php");
+			$_SESSION['errorSyntax'] = "Your password must include a minimum of one capital letter, special character, number and cannot contain a space!"
+			header("Location: ../index.php")
 			exit;
 		}
 	}
