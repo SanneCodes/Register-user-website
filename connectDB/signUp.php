@@ -28,7 +28,9 @@ $uCheck = "SELECT username FROM user WHERE username = '$username'";
 $uResult = $conn->query($uCheck);
 
 if($uResult->num_rows != 0){
-	echo "username allready exist";
+	$_SESSION['errorUsername'] = "Username already exists.";
+    header("Location: ../index.php");
+    exit;
 }
 else{
 	function specialChar($password){
@@ -48,9 +50,9 @@ else{
 	}
 
 	if (strlen($password)<8){
-		$_SESSION['errorLength'] = "Password needs to be atleast 8 characters long.";
-		header("Location: ../index.php");
-		exit;
+        $_SESSION['errorLength'] = "Password needs to be at least 8 characters long.";
+        header("Location: ../index.php");
+        exit;
 	}
 	else{
 		if (specialChar($password) && capitalChar($password) && numChar($password) && whiteSpace($password)){
@@ -71,9 +73,9 @@ else{
 			}
 		}
 		else{
-			$_SESSION['errorSyntax'] = "Your password must include: a capital letter, a number and a special character!";
-			header("Location: ../index.php");
-			exit;
+            $_SESSION['errorSyntax'] = "Your password must include: a capital letter, a number, and a special character!";
+            header("Location: ../index.php");
+            exit;
 		}
 	}
 }
