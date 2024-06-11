@@ -68,7 +68,7 @@ if($uResult->num_rows != 0){
 			}			
 		} else{
 			$_SESSION['errorSyntax'] = "Password must have capital letter, number, special character and not contain space";
-			header("Location: ../index.php")
+			header("Location: ../index.php");
 			exit;
 		}
 	}
