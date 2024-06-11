@@ -43,10 +43,10 @@ if ($conn->query($sql) === TRUE){
 	//hvis insetting velykket, så viser suksessmelding
 	echo "inserted into database";
 	header("Location: ../html/login.html");
-	exit;
+    exit;
 } else {
-	//hvis ikke velykket så viser error-melding
-	echo "error:" . $sql. "<br>" .$conn->error;
+//hvis ikke velykket så viser error-melding
+echo "error:" . $sql. "<br>" .$conn->error;
 }
 
 //lukker databaseforbindelsen

@@ -51,19 +51,20 @@ if($uResult->num_rows != 0){
 		}
 		if(capital($password) && special($password) && digit($password) && space($password)){
 			$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
-	
-			//insert bruker i db
-			$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$passwordHashed')";
+
+			$sql = conn->prepare("INSERT INTO user (mail, username, password) VALUES (?, ?, ?)");
+			$sql->bind_param("sss", $mail, $username, $passwordHashed);
+			
 			//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
 			//Utfører spørringen
-			if ($conn->query($sql) === TRUE){
+			if ($sql->execute()){
 				//hvis insetting velykket, så viser suksessmelding
 				echo "inserted into database";
 				header("Location: ../html/login.html");
 				exit;
 			} else {
 				//hvis ikke velykket så viser error-melding
-				echo "error:" . $sql. "<br>" .$conn->error;
+				echo "error:" . $sql->error;
 			}
 		} else{
 			$_SESSION['errorSyntax'] = "Your password must include a minimum of one capital letter, special character, number and cannot contain a space!";
