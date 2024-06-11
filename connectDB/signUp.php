@@ -34,7 +34,7 @@ if($uResult->num_rows != 0){
 } else{
 	if(strlen($password)<8){
 		$_SESSION['errorLength'] = "Your password needs to be more than 8 characters!";
-		header("Location: ../index.php")
+		header("Location: ../index.php");
 		exit;
 	} else{
 		function capital($password){
@@ -66,8 +66,8 @@ if($uResult->num_rows != 0){
 				echo "error:" . $sql. "<br>" .$conn->error;
 			}
 		} else{
-			$_SESSION['errorSyntax'] = "Your password must include a minimum of one capital letter, special character, number and cannot contain a space!"
-			header("Location: ../index.php")
+			$_SESSION['errorSyntax'] = "Your password must include a minimum of one capital letter, special character, number and cannot contain a space!";
+			header("Location: ../index.php");
 			exit;
 		}
 	}
