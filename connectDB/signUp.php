@@ -24,58 +24,31 @@ $mail = $conn->real_escape_string($_POST['mailInput']);
 $username = $conn->real_escape_string($_POST['usernameInput']);
 $password = $conn->real_escape_string($_POST['passwordInput']);
 
+//sql stmt that finds username in DB that is same as username input
 $uCheck = "SELECT username FROM user WHERE username = '$username'";
 $uResult = $conn->query($uCheck);
 
+//hvis mer enn 0 rader funnet, er det allerede en bruker med samme navn
 if($uResult->num_rows != 0){
-	$_SESSION['errorUsername'] = "Username already exists.";
-    header("Location: ../index.php");
+	$_SESSION['errorUsername'] = "Username already exists."; //lagrer error i session
+    header("Location: ../index.php");//endrer header lokasjon til index.php
     exit;
-} else{
-	if(strlen($password)<8){
-		$_SESSION['errorLength'] = "Your password needs to be more than 8 characters!";
-		header("Location: ../index.php");
-		exit;
-	} else{
-		function capital($password){
-			return preg_match('/[A-Z]/', $password) === 1;
-		}
-		function special($password){
-			return preg_match('/\W/', $password) === 1;
-		}
-		function digit($password){
-			return preg_match('/\d/', $password) === 1;
-		}
-		function space($password){
-			return preg_match('/\s/', $password) === 0;
-		}
-		if(capital($password) && special($password) && digit($password) && space($password)){
-			$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
-
-			$sql = $conn->prepare("INSERT INTO user (mail, username, password) VALUES (?, ?, ?)");
-			$sql->bind_param("sss", $mail, $username, $passwordHashed);
-
-			//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
-			//Utfører spørringen
-			if ($sql->execute()){
-				//hvis insetting velykket, så viser suksessmelding
-				echo "inserted into database";
-				header("Location: ../html/login.html");
-				exit;
-			} else {
-				//hvis ikke velykket så viser error-melding
-				echo "error:" . $sql->error;
-			}
-		} else{
-			$_SESSION['errorSyntax'] = "Your password must include a minimum of one capital letter, special character, number and cannot contain a space!";
-			header("Location: ../index.php");
-			exit;
-		}
-	}
+}
+	
+//insert bruker i db
+$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$password')";
+//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
+//Utfører spørringen
+if ($conn->query($sql) === TRUE){
+	//hvis insetting velykket, så viser suksessmelding
+	echo "inserted into database";
+	header("Location: ../html/login.html");
+    exit;
+} else {
+//hvis ikke velykket så viser error-melding
+echo "error:" . $sql. "<br>" .$conn->error;
 }
 
 //lukker databaseforbindelsen
 $conn->close();
-
-
 ?>

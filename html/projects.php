@@ -1,4 +1,4 @@
-<?php require 'noHeader.php';?>
+<?php require 'noHeader.php';?> <!-- legger til no header script i starten --> 
 
 <!DOCTYPE html>
 <html lang="en">
