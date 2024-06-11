@@ -31,16 +31,17 @@ if($uResult->num_rows != 0){
 	$_SESSION['errorUsername'] = "Username already exists.";
     header("Location: ../index.php");
     exit;
-} else {
+}
+else{
 	function specialChar($password){
-		return preg_match('/\w/', $password) === 1;
+		return preg_match('/\W/', $password) === 1;
 	}
 
 	function capitalChar($password){
 		return preg_match('/[A-Z]/', $password) === 1;
 	}
 
-	function number($password){
+	function numChar($password){
 		return preg_match('/\d/', $password) === 1;
 	}
 
@@ -52,10 +53,11 @@ if($uResult->num_rows != 0){
         $_SESSION['errorLength'] = "Password needs to be at least 8 characters long.";
         header("Location: ../index.php");
         exit;
-	} else{
-		if (specialChar($password) && capitalChar($password) && number($password) && whiteSpace($password)){
+	}
+	else{
+		if (specialChar($password) && capitalChar($password) && numChar($password) && whiteSpace($password)){
 			$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
-		
+	
 			//insert bruker i db
 			$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$passwordHashed')";
 			//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
@@ -69,16 +71,14 @@ if($uResult->num_rows != 0){
 				//hvis ikke velykket så viser error-melding
 				echo "error:" . $sql. "<br>" .$conn->error;
 			}
-		} else {
-			$_SESSION['errorSyntax'] = "Your password must include: a capital letter, a number, and a special character!";
-			header("Location: ../index.php")
-			exit;
+		}
+		else{
+            $_SESSION['errorSyntax'] = "Your password must include: a capital letter, a number, and a special character!";
+            header("Location: ../index.php");
+            exit;
 		}
 	}
 }
-
-
-
 
 //lukker databaseforbindelsen
 $conn->close();
