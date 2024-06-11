@@ -33,23 +33,47 @@ if($uResult->num_rows != 0){
 	$_SESSION['errorUsername'] = "Username already exists."; //lagrer error i session
     header("Location: ../index.php");//endrer header lokasjon til index.php
     exit;
+} else{
+	if(strlen($password)<8){
+		$_SESSION['errorLength'] = "Password length must be over 8 characters";
+		header("Location: ../index.php");
+		exit;
+	} else{
+		function capital($password){
+			return preg_match('/[A-Z]/', $password) === 1;
+		}
+		function number($password){
+			return preg_match('/\d/', $password) === 1;
+		}
+		function special($password){
+			return preg_match('/\W/', $password) === 1;
+		}
+		function space($password){
+			return preg_match('/\s/', $password) === 0;
+		}
+		if(capital($password) && number($password) && special($password) && space($password)){
+			$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
+			//insert bruker i db
+			$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$passwordHashed')";
+			//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
+			//Utfører spørringen
+			if ($conn->query($sql) === TRUE){
+				//hvis insetting velykket, så viser suksessmelding
+				echo "inserted into database";
+				header("Location: ../html/login.html");
+				exit;
+			} else {
+			//hvis ikke velykket så viser error-melding
+			echo "error:" . $sql. "<br>" .$conn->error;
+			}			
+		} else{
+			$_SESSION['errorSyntax'] = "Password must have capital letter, number, special character and not contain space";
+			header("Location: ../index.php")
+			exit;
+		}
+	}
 }
 	
-$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
-//insert bruker i db
-$sql = "INSERT INTO user (mail, username, password) VALUES ('$mail', '$username', '$passwordHashed')";
-//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
-//Utfører spørringen
-if ($conn->query($sql) === TRUE){
-	//hvis insetting velykket, så viser suksessmelding
-	echo "inserted into database";
-	header("Location: ../html/login.html");
-    exit;
-} else {
-//hvis ikke velykket så viser error-melding
-echo "error:" . $sql. "<br>" .$conn->error;
-}
-
 //lukker databaseforbindelsen
 $conn->close();
 
