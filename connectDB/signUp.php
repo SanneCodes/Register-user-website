@@ -34,6 +34,8 @@ if($uResult->num_rows != 0){
 } else{
 	if(strlen($password)<8){
 		$_SESSION['errorLength'] = "Your password needs to be more than 8 characters!";
+		header("Location: ../index.php")
+		exit;
 	} else{
 		function capital($password){
 			return preg_match('/[A-Z]/', $password) === 1;
