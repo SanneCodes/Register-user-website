@@ -52,9 +52,9 @@ if($uResult->num_rows != 0){
 		if(capital($password) && special($password) && digit($password) && space($password)){
 			$passwordHashed = password_hash($password, PASSWORD_BCRYPT);
 
-			$sql = conn->prepare("INSERT INTO user (mail, username, password) VALUES (?, ?, ?)");
+			$sql = $conn->prepare("INSERT INTO user (mail, username, password) VALUES (?, ?, ?)");
 			$sql->bind_param("sss", $mail, $username, $passwordHashed);
-			
+
 			//SQL-spørring for å sette inn brukerdata i 'User'-tabellen i databasen
 			//Utfører spørringen
 			if ($sql->execute()){
